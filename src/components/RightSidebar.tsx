@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Search, X } from "lucide-react";
 import { PostMeta, Tag } from "@/lib/types";
+import ThemeToggle from "./ThemeToggle";
 
 interface RightSidebarProps {
   recentPosts: PostMeta[];
@@ -47,9 +48,10 @@ export default function RightSidebar({
   return (
     <aside className="hidden xl:block w-72 shrink-0">
       <div className="sticky top-8 space-y-8">
-        {/* Search */}
+        {/* Search + Theme Toggle */}
         <div className="relative">
           <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-[var(--bg-card)] border border-[var(--border-color)]">
+            <ThemeToggle />
             <Search
               size={15}
               className="text-[var(--text-secondary)] shrink-0"

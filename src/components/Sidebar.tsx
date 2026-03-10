@@ -79,7 +79,7 @@ export default function Sidebar() {
               </div>
             </div>
             <h1 className="text-primary font-bold text-xl leading-tight">
-              Programmer&apos;s
+              Programmer
               <br />
               Diary
             </h1>
