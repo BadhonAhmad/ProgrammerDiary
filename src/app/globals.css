@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #f8f9fa;
+  --bg-sidebar: #f1f1f1;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --accent: #e8820c;
+}
+
+.dark {
+  --bg-primary: #1b1b1e;
+  --bg-sidebar: #161618;
+  --bg-card: #27272a;
+  --text-primary: #e4e4e7;
+  --text-secondary: #a1a1aa;
+  --border-color: #3f3f46;
+  --accent: #e8820c;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+/* Prose overrides for dark mode */
+.dark .prose {
+  color: #e4e4e7;
+}
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4 {
+  color: #f4f4f5;
+}
+.dark .prose code {
+  color: #e8820c;
+  background-color: #27272a;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.dark .prose pre {
+  background-color: #18181b;
+  border: 1px solid #3f3f46;
+}
+.dark .prose pre code {
+  background-color: transparent;
+  padding: 0;
+}
+.dark .prose a {
+  color: #e8820c;
+}
+.dark .prose strong {
+  color: #f4f4f5;
+}
+.dark .prose blockquote {
+  border-left-color: #e8820c;
+  color: #a1a1aa;
+}
+.dark .prose li::marker {
+  color: #a1a1aa;
+}
+.dark .prose thead th {
+  color: #f4f4f5;
+  border-bottom-color: #3f3f46;
+}
+.dark .prose tbody td {
+  border-bottom-color: #3f3f46;
+}
+
+/* Light mode prose */
+.prose code {
+  color: #c05600;
+  background-color: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.prose pre {
+  background-color: #1e1e1e;
+  color: #e4e4e7;
+}
+.prose pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+}
