@@ -25,6 +25,8 @@ const CATEGORIES = [
   'databases',
   'dev-tools',
   'debugging-stories',
+  'languages',
+  'roadmap',
 ];
 
 export function getAllPosts(): PostMeta[] {

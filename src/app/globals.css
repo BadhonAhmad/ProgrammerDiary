@@ -9,7 +9,7 @@
   --text-primary: #1a1a2e;
   --text-secondary: #6b7280;
   --border-color: #e5e7eb;
-  --accent: #e8820c;
+  --accent: #22c55e;
 }
 
 .dark {
@@ -19,7 +19,7 @@
   --text-primary: #e4e4e7;
   --text-secondary: #a1a1aa;
   --border-color: #3f3f46;
-  --accent: #e8820c;
+  --accent: #22c55e;
 }
 
 body {
@@ -51,7 +51,7 @@ body {
   color: #f4f4f5;
 }
 .dark .prose code {
-  color: #e8820c;
+  color: #7dd3fc;
   background-color: #27272a;
   padding: 2px 6px;
   border-radius: 4px;
@@ -65,13 +65,13 @@ body {
   padding: 0;
 }
 .dark .prose a {
-  color: #e8820c;
+  color: #22c55e;
 }
 .dark .prose strong {
   color: #f4f4f5;
 }
 .dark .prose blockquote {
-  border-left-color: #e8820c;
+  border-left-color: #22c55e;
   color: #a1a1aa;
 }
 .dark .prose li::marker {
@@ -87,8 +87,8 @@ body {
 
 /* Light mode prose */
 .prose code {
-  color: #c05600;
-  background-color: #f3f4f6;
+  color: #2563eb;
+  background-color: #eff6ff;
   padding: 2px 6px;
   border-radius: 4px;
 }

@@ -1,17 +1,19 @@
-import { getAllPosts, getAllTags } from '@/lib/api';
-import RightSidebar from '@/components/RightSidebar';
-import Link from 'next/link';
+import { getAllPosts, getAllTags } from "@/lib/api";
+import RightSidebar from "@/components/RightSidebar";
+import Link from "next/link";
+import type { PostMeta, Tag } from "@/lib/types";
 
 function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
   });
 }
 
 export default async function ArchivesPage() {
-  let posts, tags;
+  let posts: PostMeta[] = [];
+  let tags: Tag[] = [];
   try {
     [posts, tags] = await Promise.all([getAllPosts(), getAllTags()]);
   } catch {
@@ -39,15 +41,19 @@ export default async function ArchivesPage() {
           <span>Archives</span>
         </div>
 
-        <h1 className="text-2xl font-bold text-[var(--text-primary)] mb-8">Archives</h1>
+        <h1 className="text-2xl font-bold text-[var(--text-primary)] mb-8">
+          Archives
+        </h1>
 
         {Object.keys(grouped)
           .sort((a, b) => Number(b) - Number(a))
-          .map(year => (
+          .map((year) => (
             <div key={year} className="mb-10">
-              <h2 className="text-xl font-semibold text-primary mb-4">{year}</h2>
+              <h2 className="text-xl font-semibold text-primary mb-4">
+                {year}
+              </h2>
               <div className="space-y-3 border-l-2 border-[var(--border-color)] pl-6">
-                {grouped[year].map(post => (
+                {grouped[year].map((post) => (
                   <div
                     key={`${post.category}/${post.slug}`}
                     className="flex items-baseline gap-4"

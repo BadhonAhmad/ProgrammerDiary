@@ -13,7 +13,7 @@ export default function ThemeToggle() {
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
-        <Sun size={18} className="text-yellow-400" />
+        <Sun size={18} className="text-green-400" />
       ) : (
         <Moon size={18} className="text-zinc-600" />
       )}
