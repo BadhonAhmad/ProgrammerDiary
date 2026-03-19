@@ -26,6 +26,12 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  max-width: 100%;
 }
 
 /* Custom scrollbar */
@@ -95,9 +101,42 @@ body {
 .prose pre {
   background-color: #1e1e1e;
   color: #e4e4e7;
+  overflow-x: auto;
 }
 .prose pre code {
   background-color: transparent;
   color: inherit;
   padding: 0;
+}
+
+.prose {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose p,
+.prose li,
+.prose blockquote {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.prose :not(pre) > code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.prose img,
+.prose table {
+  max-width: 100%;
+}
+
+.prose table {
+  display: block;
+  overflow-x: auto;
 }

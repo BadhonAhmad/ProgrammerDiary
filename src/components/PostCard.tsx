@@ -31,7 +31,7 @@ export default function PostCard({ post }: { post: PostMeta }) {
           </p>
         )}
 
-        <div className="flex items-center gap-4 text-xs text-[var(--text-secondary)]">
+        <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--text-secondary)]">
           <span className="flex items-center gap-1.5">
             <Calendar size={13} />
             {formatDate(post.date)}

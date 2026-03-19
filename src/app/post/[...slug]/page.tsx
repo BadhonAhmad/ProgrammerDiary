@@ -47,10 +47,10 @@ export default async function PostPage({
   }
 
   return (
-    <div className="flex gap-8 p-6 lg:p-8 max-w-6xl mx-auto">
+    <div className="flex gap-4 sm:gap-6 lg:gap-8 p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto overflow-x-hidden">
       <div className="flex-1 min-w-0">
         {/* Breadcrumb */}
-        <div className="text-sm text-[var(--text-secondary)] mb-6">
+        <div className="text-sm text-[var(--text-secondary)] mb-6 break-words">
           <Link href="/" className="hover:text-primary transition-colors">
             Home
           </Link>
@@ -62,12 +62,12 @@ export default async function PostPage({
             {categoryLabel(category)}
           </Link>
           <span className="mx-2">›</span>
-          <span className="text-[var(--text-primary)]">{post.title}</span>
+          <span className="text-[var(--text-primary)] break-words">{post.title}</span>
         </div>
 
         {/* Post */}
-        <article>
-          <h1 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
+        <article className="min-w-0">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-4">
             {post.title}
           </h1>
 
@@ -98,7 +98,7 @@ export default async function PostPage({
 
           {/* Rendered markdown content */}
           <div
-            className="prose prose-zinc dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-primary prose-code:text-primary"
+            className="prose prose-sm sm:prose-base prose-zinc dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-primary prose-code:text-primary"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>

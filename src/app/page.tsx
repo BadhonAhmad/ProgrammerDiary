@@ -16,7 +16,7 @@ export default async function HomePage() {
   const recentPosts = posts.slice(0, 5);
 
   return (
-    <div className="flex gap-8 p-6 lg:p-8 max-w-6xl mx-auto">
+    <div className="flex gap-4 sm:gap-6 lg:gap-8 p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto">
       <div className="flex-1 min-w-0">
         {/* Breadcrumb */}
         <div className="text-sm text-[var(--text-secondary)] mb-6">Home</div>
