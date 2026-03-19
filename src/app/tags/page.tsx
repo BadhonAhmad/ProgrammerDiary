@@ -1,7 +1,8 @@
-import { getAllTags, getPostsByTag, getAllPosts } from '@/lib/api';
-import PostCard from '@/components/PostCard';
-import RightSidebar from '@/components/RightSidebar';
-import Link from 'next/link';
+import { getAllTags, getPostsByTag, getAllPosts } from "@/lib/api";
+import PostCard from "@/components/PostCard";
+import RightSidebar from "@/components/RightSidebar";
+import Link from "next/link";
+import type { PostMeta, Tag } from "@/lib/types";
 
 export default async function TagsPage({
   searchParams,
@@ -10,7 +11,8 @@ export default async function TagsPage({
 }) {
   const { tag } = await searchParams;
 
-  let tags, allPosts;
+  let tags: Tag[];
+  let allPosts: PostMeta[];
   try {
     [tags, allPosts] = await Promise.all([getAllTags(), getAllPosts()]);
   } catch {
@@ -40,13 +42,13 @@ export default async function TagsPage({
         </div>
 
         <h1 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-          {tag ? `Posts tagged "${tag}"` : 'All Tags'}
+          {tag ? `Posts tagged "${tag}"` : "All Tags"}
         </h1>
 
         {/* All tags grid */}
         {!tag && (
           <div className="flex flex-wrap gap-3 mb-8">
-            {tags.map(t => (
+            {tags.map((t) => (
               <Link
                 key={t.name}
                 href={`/tags?tag=${t.name}`}
@@ -63,11 +65,13 @@ export default async function TagsPage({
         {tag && (
           <div className="space-y-4">
             {filteredPosts.length > 0 ? (
-              filteredPosts.map(post => (
+              filteredPosts.map((post) => (
                 <PostCard key={`${post.category}/${post.slug}`} post={post} />
               ))
             ) : (
-              <p className="text-[var(--text-secondary)]">No posts with this tag.</p>
+              <p className="text-[var(--text-secondary)]">
+                No posts with this tag.
+              </p>
             )}
           </div>
         )}

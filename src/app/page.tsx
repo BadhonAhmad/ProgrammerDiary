@@ -1,9 +1,11 @@
 import { getAllPosts, getAllTags } from "@/lib/api";
+import type { PostMeta, Tag } from "@/lib/types";
 import PostCard from "@/components/PostCard";
 import RightSidebar from "@/components/RightSidebar";
 
 export default async function HomePage() {
-  let posts, tags;
+  let posts: PostMeta[];
+  let tags: Tag[];
   try {
     [posts, tags] = await Promise.all([getAllPosts(), getAllTags()]);
   } catch {
@@ -29,7 +31,7 @@ export default async function HomePage() {
             <div className="text-center py-20 text-[var(--text-secondary)]">
               <p className="text-lg mb-2">No posts yet</p>
               <p className="text-sm">
-                Start the Express server and add markdown files to the{" "}
+                Add markdown files to the{" "}
                 <code className="px-1.5 py-0.5 rounded bg-[var(--bg-card)] text-primary text-xs">
                   content/
                 </code>{" "}

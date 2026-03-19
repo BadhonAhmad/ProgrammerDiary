@@ -3,20 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:next\"",
-    "dev:next": "next dev",
-    "dev:server": "tsx watch server/index.ts",
+    "dev": "next dev",
     "build": "next build",
-    "start": "concurrently \"npm run start:server\" \"npm run start:next\"",
-    "start:next": "next start",
-    "start:server": "tsx server/index.ts"
+    "start": "next start"
   },
   "dependencies": {
     "next": "^15.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "express": "^4.21.0",
-    "cors": "^2.8.5",
     "gray-matter": "^4.0.3",
     "marked": "^15.0.0",
     "lucide-react": "^0.460.0"
@@ -25,14 +19,10 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@types/express": "^5.0.0",
-    "@types/cors": "^2.8.17",
     "typescript": "^5.6.0",
     "tailwindcss": "^3.4.0",
     "postcss": "^8.4.0",
     "autoprefixer": "^10.4.0",
-    "tsx": "^4.19.0",
-    "concurrently": "^9.0.0",
     "@tailwindcss/typography": "^0.5.15"
   }
 }

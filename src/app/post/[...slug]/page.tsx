@@ -3,6 +3,7 @@ import RightSidebar from "@/components/RightSidebar";
 import Link from "next/link";
 import { Calendar, FolderOpen } from "lucide-react";
 import { notFound } from "next/navigation";
+import type { PostMeta, Tag } from "@/lib/types";
 
 function categoryLabel(category: string): string {
   return category
@@ -36,7 +37,8 @@ export default async function PostPage({
     notFound();
   }
 
-  let allPosts, tags;
+  let allPosts: PostMeta[];
+  let tags: Tag[];
   try {
     [allPosts, tags] = await Promise.all([getAllPosts(), getAllTags()]);
   } catch {

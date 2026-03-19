@@ -28,10 +28,8 @@ export default function RightSidebar({
     const timer = setTimeout(async () => {
       setIsSearching(true);
       try {
-        const API_URL =
-          process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
         const res = await fetch(
-          `${API_URL}/posts/search?q=${encodeURIComponent(searchQuery)}`,
+          `/api/posts/search?q=${encodeURIComponent(searchQuery)}`,
         );
         const data = await res.json();
         setSearchResults(data);

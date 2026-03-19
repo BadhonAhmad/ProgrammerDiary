@@ -1,4 +1,5 @@
 import { getPostsByCategory, getAllTags, getAllPosts } from "@/lib/api";
+import type { PostMeta, Tag } from "@/lib/types";
 import PostCard from "@/components/PostCard";
 import RightSidebar from "@/components/RightSidebar";
 import Link from "next/link";
@@ -17,7 +18,9 @@ export default async function CategoryPage({
 }) {
   const { category } = await params;
 
-  let posts, tags, allPosts;
+  let posts: PostMeta[];
+  let tags: Tag[];
+  let allPosts: PostMeta[];
   try {
     [posts, tags, allPosts] = await Promise.all([
       getPostsByCategory(category),
