@@ -25,6 +25,7 @@ const CATEGORIES = [
   'databases',
   'dev-tools',
   'debugging-stories',
+  'interviews-and-viva',
   'languages',
   'roadmap',
 ];

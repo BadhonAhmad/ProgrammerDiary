@@ -11,6 +11,7 @@ import {
   Database,
   Wrench,
   Bug,
+  GraduationCap,
   Tag,
   Archive,
   ChevronDown,
@@ -34,7 +35,23 @@ const categories = [
   { name: "Databases", slug: "databases", icon: Database },
   { name: "Dev Tools", slug: "dev-tools", icon: Wrench },
   { name: "Debugging Stories", slug: "debugging-stories", icon: Bug },
+  {
+    name: "Interviews & Viva",
+    slug: "interviews-and-viva",
+    icon: GraduationCap,
+  },
 ];
+
+const categorySubmenuPosts: Record<string, { title: string; slug: string }[]> =
+  {
+    "interviews-and-viva": [
+      { title: "Craftsmen", slug: "craftsmen-software-company" },
+      { title: "CMED Health", slug: "cmed-health" },
+      { title: "Giga Tech", slug: "giga-tech" },
+      { title: "Bitopia", slug: "bitopia" },
+      { title: "Fringe Core", slug: "fringe-core" },
+    ],
+  };
 
 const languageFrameworks = [
   {
@@ -62,7 +79,10 @@ const languageFrameworks = [
           { title: "Union Types & any", slug: "union-types-and-any" },
           { title: "Type Narrowing", slug: "type-narrowing" },
           { title: "Interfaces & implements", slug: "interfaces" },
-          { title: "Object Types & Utility Types", slug: "object-types-and-utility-types" },
+          {
+            title: "Object Types & Utility Types",
+            slug: "object-types-and-utility-types",
+          },
           { title: "Tuples & Enums", slug: "tuples-and-enums" },
         ],
       },
@@ -215,13 +235,20 @@ export default function Sidebar() {
               {/* Expandable submenu */}
               {expandedCategories.includes(slug) && (
                 <div className="ml-9 mb-2 border-l border-[var(--border-color)] pl-3">
-                  <Link
-                    href={`/category/${slug}`}
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-1.5 text-xs text-[var(--text-secondary)] hover:text-primary transition-colors"
-                  >
-                    View all posts →
-                  </Link>
+                  {(categorySubmenuPosts[slug] ?? []).map((post) => (
+                    <Link
+                      key={post.slug}
+                      href={`/post/${slug}/${post.slug}`}
+                      onClick={() => setMobileOpen(false)}
+                      className={`block py-1.5 text-xs transition-colors ${
+                        pathname === `/post/${slug}/${post.slug}`
+                          ? "text-primary font-medium"
+                          : "text-[var(--text-secondary)] hover:text-primary"
+                      }`}
+                    >
+                      {post.title}
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
