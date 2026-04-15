@@ -98,7 +98,7 @@ export default async function PostPage({
 
           {/* Rendered markdown content */}
           <div
-            className="prose prose-sm sm:prose-base prose-zinc dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-primary prose-code:text-primary"
+            className="prose prose-sm sm:prose-base prose-zinc dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-primary prose-code:text-primary [&>h1:first-child]:hidden"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
