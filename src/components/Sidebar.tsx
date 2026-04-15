@@ -154,6 +154,148 @@ const languageFrameworks: LanguageFramework[] = [
     ],
   },
   {
+    name: "Vue.js",
+    slug: "vue",
+    icon: FileCode2,
+    posts: [],
+    subcategories: [
+      {
+        name: "Getting Started",
+        slug: "getting-started",
+        posts: [
+          { title: "What is Vue.js?", slug: "what-is-vue" },
+          { title: "Why Vue.js?", slug: "why-vue" },
+          {
+            title: "Installation & Setup",
+            slug: "vue-installation-setup",
+          },
+          {
+            title: "Directory Structure",
+            slug: "vue-directory-structure",
+          },
+        ],
+      },
+      {
+        name: "Core Concepts",
+        slug: "core-concepts",
+        posts: [
+          {
+            title: "Instance & Reactivity",
+            slug: "vue-instance-and-reactivity",
+          },
+          {
+            title: "Template Syntax & Directives",
+            slug: "vue-template-syntax-and-directives",
+          },
+          {
+            title: "Computed Properties & Watchers",
+            slug: "vue-computed-properties-and-watchers",
+          },
+          {
+            title: "Methods vs Computed vs Watchers",
+            slug: "vue-methods-vs-computed-vs-watchers",
+          },
+          {
+            title: "Lifecycle Hooks",
+            slug: "vue-lifecycle-hooks",
+          },
+        ],
+      },
+      {
+        name: "Components",
+        slug: "components",
+        posts: [
+          {
+            title: "Components Basics",
+            slug: "vue-components-basics",
+          },
+          {
+            title: "Props & Custom Events",
+            slug: "vue-props-and-custom-events",
+          },
+          {
+            title: "Slots",
+            slug: "vue-slots",
+          },
+          {
+            title: "Provide & Inject",
+            slug: "vue-provide-and-inject",
+          },
+          {
+            title: "Dynamic & Async Components",
+            slug: "vue-dynamic-and-async-components",
+          },
+        ],
+      },
+      {
+        name: "Forms & User Input",
+        slug: "forms",
+        posts: [
+          {
+            title: "Form Input Bindings",
+            slug: "vue-form-input-bindings",
+          },
+        ],
+      },
+      {
+        name: "Composition API",
+        slug: "composition-api",
+        posts: [
+          {
+            title: "Composition API & Setup",
+            slug: "vue-composition-api-and-setup",
+          },
+          {
+            title: "Reactive & Ref",
+            slug: "vue-reactive-and-ref",
+          },
+          {
+            title: "Composables",
+            slug: "vue-composables",
+          },
+        ],
+      },
+      {
+        name: "Routing & State",
+        slug: "routing-state",
+        posts: [
+          { title: "Vue Router", slug: "vue-router" },
+          {
+            title: "Pinia State Management",
+            slug: "vue-pinia",
+          },
+        ],
+      },
+      {
+        name: "Advanced",
+        slug: "advanced",
+        posts: [
+          {
+            title: "Custom Directives",
+            slug: "vue-custom-directives",
+          },
+          {
+            title: "Transitions & Animations",
+            slug: "vue-transitions-and-animations",
+          },
+          {
+            title: "Vue with TypeScript",
+            slug: "vue-with-typescript",
+          },
+          {
+            title: "Performance Optimization",
+            slug: "vue-performance-optimization",
+          },
+          { title: "Testing", slug: "vue-testing" },
+          {
+            title: "Deployment",
+            slug: "vue-deployment",
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: "Laravel",
     slug: "laravel",
     icon: FileCode2,
