@@ -24,6 +24,7 @@ import {
   X,
   BookOpen,
   FileCode2,
+  type LucideIcon,
 } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -52,7 +53,21 @@ const categorySubmenuPosts: Record<string, { title: string; slug: string }[]> =
     ],
   };
 
-const languageFrameworks = [
+interface Subcategory {
+  name: string;
+  slug: string;
+  posts: { title: string; slug: string }[];
+}
+
+interface LanguageFramework {
+  name: string;
+  slug: string;
+  icon: LucideIcon;
+  posts: { title: string; slug: string }[];
+  subcategories: Subcategory[];
+}
+
+const languageFrameworks: LanguageFramework[] = [
   {
     name: "TypeScript",
     slug: "typescript",
