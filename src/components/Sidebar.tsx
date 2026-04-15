@@ -95,6 +95,126 @@ const languageFrameworks = [
       },
     ],
   },
+  {
+    name: "Laravel",
+    slug: "laravel",
+    icon: FileCode2,
+    posts: [],
+    subcategories: [
+      {
+        name: "Getting Started",
+        slug: "getting-started",
+        posts: [
+          { title: "What is Laravel?", slug: "what-is-laravel" },
+          {
+            title: "Installation & Setup",
+            slug: "laravel-installation-setup",
+          },
+          {
+            title: "Directory Structure",
+            slug: "laravel-directory-structure",
+          },
+        ],
+      },
+      {
+        name: "Routing & Controllers",
+        slug: "routing-controllers",
+        posts: [
+          { title: "Routing", slug: "laravel-routing" },
+          { title: "Controllers", slug: "laravel-controllers" },
+          { title: "Middleware", slug: "laravel-middleware" },
+        ],
+      },
+      {
+        name: "Views & Blade",
+        slug: "views-blade",
+        posts: [
+          {
+            title: "Blade Templates",
+            slug: "laravel-blade-templates",
+          },
+          {
+            title: "Views & Components",
+            slug: "laravel-views-and-components",
+          },
+        ],
+      },
+      {
+        name: "Database & Eloquent",
+        slug: "database-eloquent",
+        posts: [
+          {
+            title: "Database & Migrations",
+            slug: "laravel-database-migrations",
+          },
+          { title: "Eloquent ORM", slug: "laravel-eloquent-orm" },
+          {
+            title: "Eloquent Relationships",
+            slug: "laravel-eloquent-relationships",
+          },
+        ],
+      },
+      {
+        name: "Forms & Validation",
+        slug: "forms-validation",
+        posts: [
+          {
+            title: "Forms & Validation",
+            slug: "laravel-forms-and-validation",
+          },
+          {
+            title: "File Uploads & Storage",
+            slug: "laravel-file-uploads",
+          },
+        ],
+      },
+      {
+        name: "Auth",
+        slug: "auth",
+        posts: [
+          {
+            title: "Authentication",
+            slug: "laravel-authentication",
+          },
+          {
+            title: "Authorization (Gates & Policies)",
+            slug: "laravel-authorization",
+          },
+        ],
+      },
+      {
+        name: "API Development",
+        slug: "api-development",
+        posts: [
+          { title: "Building REST APIs", slug: "laravel-rest-api" },
+          {
+            title: "API Authentication",
+            slug: "laravel-api-authentication",
+          },
+        ],
+      },
+      {
+        name: "Advanced",
+        slug: "advanced",
+        posts: [
+          {
+            title: "Queues & Jobs",
+            slug: "laravel-queues-and-jobs",
+          },
+          {
+            title: "Events & Listeners",
+            slug: "laravel-events-and-listeners",
+          },
+          { title: "Caching", slug: "laravel-caching" },
+          { title: "Testing (PHPUnit & Pest)", slug: "laravel-testing" },
+          {
+            title: "Deployment & Best Practices",
+            slug: "laravel-deployment",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 const roadmapItems = [
@@ -277,90 +397,105 @@ export default function Sidebar() {
             {langSectionOpen && (
               <div className="ml-4 border-l border-[var(--border-color)] pl-2">
                 {languageFrameworks.map(
-                  ({ name, slug, icon: LangIcon, posts }) => (
-                    <div key={slug}>
-                      {/* Language item (e.g. TypeScript) */}
-                      <button
-                        onClick={() => toggleLang(slug)}
-                        className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg mb-0.5 text-sm transition-colors ${
-                          pathname.startsWith(`/post/languages/`)
-                            ? "text-primary"
-                            : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-zinc-500/10"
-                        }`}
-                      >
-                        <LangIcon size={14} />
-                        <span className="flex-1 text-left text-xs font-medium uppercase tracking-wide">
-                          {name}
-                        </span>
-                        {expandedLangs.includes(slug) ? (
-                          <ChevronDown size={12} />
-                        ) : (
-                          <ChevronRight size={12} />
-                        )}
-                      </button>
+                  ({
+                    name,
+                    slug,
+                    icon: LangIcon,
+                    posts,
+                    subcategories = [],
+                  }) => {
+                    const langPostSlugs = [
+                      ...posts.map((post) => post.slug),
+                      ...subcategories.flatMap((sub) =>
+                        sub.posts.map((post) => post.slug),
+                      ),
+                    ];
+                    const isLangActive = langPostSlugs.some(
+                      (postSlug) => pathname === `/post/languages/${postSlug}`,
+                    );
 
-                      {/* Posts and subcategories under this language */}
-                      {expandedLangs.includes(slug) && (
-                        <div className="ml-5 border-l border-[var(--border-color)] pl-3 mb-1">
-                          {posts.map((post) => (
-                            <Link
-                              key={post.slug}
-                              href={`/post/languages/${post.slug}`}
-                              onClick={() => setMobileOpen(false)}
-                              className={`block py-1.5 text-xs transition-colors ${
-                                pathname === `/post/languages/${post.slug}`
-                                  ? "text-primary font-medium"
-                                  : "text-[var(--text-secondary)] hover:text-primary"
-                              }`}
-                            >
-                              {post.title}
-                            </Link>
-                          ))}
-                          {/* Subcategories (e.g. Types) */}
-                          {(
-                            languageFrameworks.find((l) => l.slug === slug)
-                              ?.subcategories ?? []
-                          ).map((sub) => {
-                            const subKey = `${slug}-${sub.slug}`;
-                            return (
-                              <div key={sub.slug}>
-                                <button
-                                  onClick={() => toggleSubcategory(subKey)}
-                                  className="w-full flex items-center gap-1.5 py-1.5 text-xs font-medium uppercase tracking-wide text-[var(--text-secondary)] hover:text-primary transition-colors"
-                                >
-                                  {expandedSubcategories.includes(subKey) ? (
-                                    <ChevronDown size={11} />
-                                  ) : (
-                                    <ChevronRight size={11} />
+                    return (
+                      <div key={slug}>
+                        {/* Language item (e.g. TypeScript) */}
+                        <button
+                          onClick={() => toggleLang(slug)}
+                          className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg mb-0.5 text-sm transition-colors ${
+                            isLangActive
+                              ? "text-primary"
+                              : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-zinc-500/10"
+                          }`}
+                        >
+                          <LangIcon size={14} />
+                          <span className="flex-1 text-left text-xs font-medium uppercase tracking-wide">
+                            {name}
+                          </span>
+                          {expandedLangs.includes(slug) ? (
+                            <ChevronDown size={12} />
+                          ) : (
+                            <ChevronRight size={12} />
+                          )}
+                        </button>
+
+                        {/* Posts and subcategories under this language */}
+                        {expandedLangs.includes(slug) && (
+                          <div className="ml-5 border-l border-[var(--border-color)] pl-3 mb-1">
+                            {posts.map((post) => (
+                              <Link
+                                key={post.slug}
+                                href={`/post/languages/${post.slug}`}
+                                onClick={() => setMobileOpen(false)}
+                                className={`block py-1.5 text-xs transition-colors ${
+                                  pathname === `/post/languages/${post.slug}`
+                                    ? "text-primary font-medium"
+                                    : "text-[var(--text-secondary)] hover:text-primary"
+                                }`}
+                              >
+                                {post.title}
+                              </Link>
+                            ))}
+                            {/* Subcategories (e.g. Types) */}
+                            {subcategories.map((sub) => {
+                              const subKey = `${slug}-${sub.slug}`;
+                              return (
+                                <div key={sub.slug}>
+                                  <button
+                                    onClick={() => toggleSubcategory(subKey)}
+                                    className="w-full flex items-center gap-1.5 py-1.5 text-xs font-medium uppercase tracking-wide text-[var(--text-secondary)] hover:text-primary transition-colors"
+                                  >
+                                    {expandedSubcategories.includes(subKey) ? (
+                                      <ChevronDown size={11} />
+                                    ) : (
+                                      <ChevronRight size={11} />
+                                    )}
+                                    {sub.name}
+                                  </button>
+                                  {expandedSubcategories.includes(subKey) && (
+                                    <div className="ml-3 border-l border-[var(--border-color)] pl-3 mb-1">
+                                      {sub.posts.map((post) => (
+                                        <Link
+                                          key={post.slug}
+                                          href={`/post/languages/${post.slug}`}
+                                          onClick={() => setMobileOpen(false)}
+                                          className={`block py-1.5 text-xs transition-colors ${
+                                            pathname ===
+                                            `/post/languages/${post.slug}`
+                                              ? "text-primary font-medium"
+                                              : "text-[var(--text-secondary)] hover:text-primary"
+                                          }`}
+                                        >
+                                          {post.title}
+                                        </Link>
+                                      ))}
+                                    </div>
                                   )}
-                                  {sub.name}
-                                </button>
-                                {expandedSubcategories.includes(subKey) && (
-                                  <div className="ml-3 border-l border-[var(--border-color)] pl-3 mb-1">
-                                    {sub.posts.map((post) => (
-                                      <Link
-                                        key={post.slug}
-                                        href={`/post/languages/${post.slug}`}
-                                        onClick={() => setMobileOpen(false)}
-                                        className={`block py-1.5 text-xs transition-colors ${
-                                          pathname ===
-                                          `/post/languages/${post.slug}`
-                                            ? "text-primary font-medium"
-                                            : "text-[var(--text-secondary)] hover:text-primary"
-                                        }`}
-                                      >
-                                        {post.title}
-                                      </Link>
-                                    ))}
-                                  </div>
-                                )}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      )}
-                    </div>
-                  ),
+                                </div>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  },
                 )}
               </div>
             )}
