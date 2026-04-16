@@ -415,6 +415,219 @@ const languageFrameworks: LanguageFramework[] = [
       },
     ],
   },
+  {
+    name: "Next.js",
+    slug: "nextjs",
+    icon: FileCode2,
+    posts: [],
+    subcategories: [
+      {
+        name: "Getting Started",
+        slug: "getting-started",
+        posts: [
+          { title: "What is Next.js?", slug: "what-is-nextjs" },
+          { title: "Why Next.js?", slug: "why-nextjs" },
+          {
+            title: "Installation & Setup",
+            slug: "nextjs-installation-setup",
+          },
+          {
+            title: "Directory Structure",
+            slug: "nextjs-directory-structure",
+          },
+        ],
+      },
+      {
+        name: "Routing",
+        slug: "routing",
+        posts: [
+          { title: "App Router", slug: "nextjs-app-router" },
+          {
+            title: "Dynamic Routes & Layouts",
+            slug: "nextjs-dynamic-routes-and-layouts",
+          },
+        ],
+      },
+      {
+        name: "Data & Components",
+        slug: "data-components",
+        posts: [
+          {
+            title: "Server vs Client Components",
+            slug: "nextjs-server-vs-client-components",
+          },
+          {
+            title: "Data Fetching & Caching",
+            slug: "nextjs-data-fetching-and-caching",
+          },
+          {
+            title: "Server Actions",
+            slug: "nextjs-server-actions",
+          },
+        ],
+      },
+      {
+        name: "API & Middleware",
+        slug: "api-middleware",
+        posts: [
+          {
+            title: "Route Handlers & API Routes",
+            slug: "nextjs-route-handlers",
+          },
+          {
+            title: "Middleware",
+            slug: "nextjs-middleware",
+          },
+        ],
+      },
+      {
+        name: "Advanced",
+        slug: "advanced",
+        posts: [
+          {
+            title: "SEO & Metadata",
+            slug: "nextjs-seo-and-metadata",
+          },
+          {
+            title: "Image Optimization",
+            slug: "nextjs-image-optimization",
+          },
+          {
+            title: "Authentication",
+            slug: "nextjs-authentication",
+          },
+          {
+            title: "Performance & Optimization",
+            slug: "nextjs-performance",
+          },
+          {
+            title: "Deployment",
+            slug: "nextjs-deployment",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Node.js",
+    slug: "nodejs",
+    icon: FileCode2,
+    posts: [],
+    subcategories: [
+      {
+        name: "Getting Started",
+        slug: "getting-started",
+        posts: [
+          { title: "What is Node.js?", slug: "what-is-nodejs" },
+          { title: "Why Node.js?", slug: "why-nodejs" },
+          {
+            title: "Installation & Setup",
+            slug: "nodejs-installation-setup",
+          },
+        ],
+      },
+      {
+        name: "Core Concepts",
+        slug: "core-concepts",
+        posts: [
+          { title: "Event Loop", slug: "nodejs-event-loop" },
+          { title: "Modules & Require", slug: "nodejs-modules-and-require" },
+          {
+            title: "npm & Package Management",
+            slug: "nodejs-npm-and-package-management",
+          },
+        ],
+      },
+      {
+        name: "Async Programming",
+        slug: "async-programming",
+        posts: [
+          {
+            title: "Callbacks, Promises & Async/Await",
+            slug: "nodejs-callbacks-promises-async-await",
+          },
+          { title: "Streams & Buffers", slug: "nodejs-streams-and-buffers" },
+        ],
+      },
+      {
+        name: "File & Network",
+        slug: "file-and-network",
+        posts: [
+          { title: "File System (fs)", slug: "nodejs-file-system" },
+          { title: "HTTP Module", slug: "nodejs-http-module" },
+        ],
+      },
+      {
+        name: "Advanced",
+        slug: "advanced",
+        posts: [
+          { title: "Error Handling", slug: "nodejs-error-handling" },
+          {
+            title: "Security Best Practices",
+            slug: "nodejs-security-best-practices",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Express.js",
+    slug: "expressjs",
+    icon: FileCode2,
+    posts: [],
+    subcategories: [
+      {
+        name: "Getting Started",
+        slug: "getting-started",
+        posts: [
+          { title: "What is Express.js?", slug: "what-is-expressjs" },
+          {
+            title: "Installation & Setup",
+            slug: "expressjs-installation-setup",
+          },
+        ],
+      },
+      {
+        name: "Core Concepts",
+        slug: "core-concepts",
+        posts: [
+          { title: "Routing", slug: "expressjs-routing" },
+          { title: "Middleware", slug: "expressjs-middleware" },
+          {
+            title: "Request & Response",
+            slug: "expressjs-request-and-response",
+          },
+        ],
+      },
+      {
+        name: "Building APIs",
+        slug: "building-apis",
+        posts: [
+          { title: "REST API", slug: "expressjs-rest-api" },
+          {
+            title: "Authentication & Security",
+            slug: "expressjs-authentication-security",
+          },
+          {
+            title: "File Upload & Static Files",
+            slug: "expressjs-file-upload-and-static-files",
+          },
+        ],
+      },
+      {
+        name: "Advanced",
+        slug: "advanced",
+        posts: [
+          { title: "Error Handling", slug: "expressjs-error-handling" },
+          { title: "Template Engines", slug: "expressjs-template-engines" },
+          {
+            title: "Performance & Best Practices",
+            slug: "expressjs-performance-and-best-practices",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export default function Sidebar() {
