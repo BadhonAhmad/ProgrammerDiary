@@ -45,6 +45,7 @@ const categories = [
 const categorySubmenuPosts: Record<string, { title: string; slug: string }[]> =
   {
     databases: [
+      { title: "PostgreSQL", slug: "postgresql" },
       { title: "Prisma ORM", slug: "prisma-orm" },
     ],
     "interviews-and-viva": [
