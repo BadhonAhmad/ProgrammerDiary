@@ -151,6 +151,22 @@ const categorySubcategories: Record<
       ],
     },
   ],
+  databases: [
+    {
+      name: "Database Scaling",
+      slug: "database-scaling",
+      posts: [
+        { title: "Database Scaling", slug: "database-scaling" },
+        { title: "Database Replication", slug: "database-replication" },
+        { title: "Database Sharding", slug: "database-sharding" },
+        { title: "Read Replicas", slug: "read-replicas" },
+        { title: "Master-Slave Architecture", slug: "master-slave-architecture" },
+        { title: "Multi-Master Architecture", slug: "multi-master-architecture" },
+        { title: "Consistency Models", slug: "consistency-models-db" },
+        { title: "ACID vs BASE", slug: "acid-vs-base" },
+      ],
+    },
+  ],
   "system-design": [
     {
       name: "System Design Fundamentals",
@@ -206,6 +222,31 @@ const categorySubcategories: Record<
         { title: "IP Hash", slug: "ip-hash" },
         { title: "Health Checks", slug: "health-checks" },
         { title: "Service Discovery", slug: "service-discovery" },
+      ],
+    },
+    {
+      name: "Messaging Systems",
+      slug: "messaging-systems",
+      posts: [
+        { title: "Message Queues", slug: "message-queues" },
+        { title: "Publish–Subscribe Model", slug: "publish-subscribe-model" },
+        { title: "Event Streaming", slug: "event-streaming" },
+        { title: "Message Brokers", slug: "message-brokers" },
+        { title: "Kafka Basics", slug: "kafka-basics" },
+        { title: "RabbitMQ Basics", slug: "rabbitmq-basics" },
+        { title: "Asynchronous Communication", slug: "asynchronous-communication" },
+      ],
+    },
+    {
+      name: "Distributed Systems Concepts",
+      slug: "distributed-systems",
+      posts: [
+        { title: "Distributed Systems Basics", slug: "distributed-systems-basics" },
+        { title: "Consensus Algorithms", slug: "consensus-algorithms" },
+        { title: "Leader Election", slug: "leader-election" },
+        { title: "Distributed Locking", slug: "distributed-locking" },
+        { title: "Distributed Transactions", slug: "distributed-transactions" },
+        { title: "Data Consistency", slug: "data-consistency" },
       ],
     },
   ],
