@@ -44,6 +44,7 @@ const categories = [
 
 const categorySubmenuPosts: Record<string, { title: string; slug: string }[]> =
   {
+    backend: [],
     databases: [
       { title: "PostgreSQL", slug: "postgresql" },
       { title: "Prisma ORM", slug: "prisma-orm" },
@@ -56,6 +57,159 @@ const categorySubmenuPosts: Record<string, { title: string; slug: string }[]> =
       { title: "Fringe Core", slug: "fringe-core" },
     ],
   };
+
+const categorySubcategories: Record<
+  string,
+  { name: string; slug: string; posts: { title: string; slug: string }[] }[]
+> = {
+  backend: [
+    {
+      name: "Backend Core Concepts",
+      slug: "core-concepts",
+      posts: [
+        { title: "Backend Fundamentals", slug: "backend-fundamentals" },
+        {
+          title: "Client-Server Architecture",
+          slug: "client-server-architecture",
+        },
+        {
+          title: "Request-Response Lifecycle",
+          slug: "request-response-lifecycle",
+        },
+        { title: "REST API", slug: "rest-api" },
+        { title: "API Design Principles", slug: "rest-api-design-principles" },
+        { title: "CRUD Operations", slug: "crud-operations" },
+        { title: "MVC Architecture", slug: "mvc-architecture" },
+        {
+          title: "Monolith vs Microservices",
+          slug: "monolithic-vs-microservices",
+        },
+        { title: "Middleware", slug: "middleware" },
+        { title: "Error Handling", slug: "error-handling" },
+        { title: "Logging", slug: "logging" },
+      ],
+    },
+    {
+      name: "Authentication & Security",
+      slug: "auth-security",
+      posts: [
+        { title: "Authentication", slug: "authentication" },
+        { title: "Authorization", slug: "authorization" },
+        { title: "JWT (JSON Web Tokens)", slug: "jwt" },
+        { title: "OAuth 2.0", slug: "oauth" },
+        { title: "Sessions & Cookies", slug: "sessions-and-cookies" },
+        { title: "bcryptjs (Password Hashing)", slug: "bcryptjs" },
+        { title: "API Security", slug: "api-security" },
+        { title: "Rate Limiting", slug: "rate-limiting" },
+        { title: "CORS", slug: "cors" },
+        { title: "CSRF Protection", slug: "csrf-protection" },
+        { title: "XSS Protection", slug: "xss-protection" },
+        { title: "Input Sanitization", slug: "input-sanitization" },
+      ],
+    },
+    {
+      name: "Performance & Scalability",
+      slug: "performance-scalability",
+      posts: [
+        { title: "Pagination", slug: "pagination" },
+        { title: "Caching Strategies", slug: "caching-strategies" },
+        { title: "Redis for Caching", slug: "redis-caching" },
+        { title: "Load Balancing", slug: "load-balancing" },
+        { title: "Horizontal vs Vertical Scaling", slug: "scaling" },
+        { title: "CDN in Backend Systems", slug: "cdn-backend" },
+        { title: "Background Jobs / Queues", slug: "background-jobs" },
+        { title: "Message Queues (RabbitMQ / Kafka)", slug: "message-queues" },
+        { title: "Database Connection Pooling", slug: "connection-pooling" },
+      ],
+    },
+    {
+      name: "Data Handling",
+      slug: "data-handling",
+      posts: [
+        { title: "File Storage (Local vs Cloud)", slug: "file-storage" },
+        { title: "Data Serialization (JSON / Protobuf)", slug: "data-serialization" },
+        { title: "Data Validation", slug: "data-validation" },
+        { title: "Data Transformation", slug: "data-transformation" },
+        { title: "Schema Validation", slug: "schema-validation" },
+        { title: "Data Migration", slug: "data-migration" },
+      ],
+    },
+    {
+      name: "Advanced Backend Topics",
+      slug: "advanced-backend",
+      posts: [
+        { title: "WebSockets", slug: "websockets" },
+        { title: "Real-Time Systems", slug: "real-time-systems" },
+        { title: "GraphQL APIs", slug: "graphql-apis" },
+        { title: "gRPC", slug: "grpc" },
+        { title: "Event-Driven Architecture", slug: "event-driven-architecture" },
+        { title: "Distributed Systems Basics", slug: "distributed-systems" },
+        { title: "Circuit Breaker Pattern", slug: "circuit-breaker" },
+        { title: "API Gateway", slug: "api-gateway" },
+        { title: "Service Discovery", slug: "service-discovery" },
+        { title: "Health Checks & Monitoring", slug: "health-checks-monitoring" },
+      ],
+    },
+  ],
+  "system-design": [
+    {
+      name: "System Design Fundamentals",
+      slug: "fundamentals",
+      posts: [
+        { title: "What is System Design", slug: "what-is-system-design" },
+        { title: "Goals of System Design", slug: "goals-of-system-design" },
+        { title: "Functional vs Non-Functional Requirements", slug: "functional-vs-non-functional" },
+        { title: "Scalability", slug: "scalability" },
+        { title: "Reliability", slug: "reliability" },
+        { title: "Availability", slug: "availability" },
+        { title: "Maintainability", slug: "maintainability" },
+        { title: "Fault Tolerance", slug: "fault-tolerance" },
+        { title: "CAP Theorem", slug: "cap-theorem" },
+        { title: "Latency vs Throughput", slug: "latency-vs-throughput" },
+      ],
+    },
+    {
+      name: "System Architecture",
+      slug: "architecture",
+      posts: [
+        { title: "Monolithic Architecture", slug: "monolithic-architecture" },
+        { title: "Microservices Architecture", slug: "microservices-architecture" },
+        { title: "Service-Oriented Architecture (SOA)", slug: "soa" },
+        { title: "Event-Driven Architecture", slug: "event-driven-architecture" },
+        { title: "Layered Architecture", slug: "layered-architecture" },
+        { title: "Clean Architecture", slug: "clean-architecture" },
+        { title: "Hexagonal Architecture", slug: "hexagonal-architecture" },
+      ],
+    },
+    {
+      name: "Scalability Concepts",
+      slug: "scalability-concepts",
+      posts: [
+        { title: "Horizontal Scaling", slug: "horizontal-scaling" },
+        { title: "Vertical Scaling", slug: "vertical-scaling" },
+        { title: "Stateless vs Stateful Systems", slug: "stateless-vs-stateful" },
+        { title: "Load Distribution", slug: "load-distribution" },
+        { title: "Auto Scaling", slug: "auto-scaling" },
+        { title: "Partitioning Strategies", slug: "partitioning-strategies" },
+      ],
+    },
+    {
+      name: "Load Balancing",
+      slug: "load-balancing",
+      posts: [
+        { title: "What is Load Balancing", slug: "what-is-load-balancing" },
+        { title: "Types of Load Balancers", slug: "types-of-load-balancers" },
+        { title: "Layer 4 vs Layer 7 Load Balancing", slug: "layer-4-vs-layer-7" },
+        { title: "Load Balancing Algorithms", slug: "load-balancing-algorithms" },
+        { title: "Round Robin", slug: "round-robin" },
+        { title: "Least Connections", slug: "least-connections" },
+        { title: "IP Hash", slug: "ip-hash" },
+        { title: "Health Checks", slug: "health-checks" },
+        { title: "Service Discovery", slug: "service-discovery" },
+      ],
+    },
+  ],
+};
 
 interface Subcategory {
   name: string;
@@ -753,6 +907,44 @@ export default function Sidebar() {
               {/* Expandable submenu */}
               {expandedCategories.includes(slug) && (
                 <div className="ml-9 mb-2 border-l border-[var(--border-color)] pl-3">
+                  {/* Subcategories within category */}
+                  {(categorySubcategories[slug] ?? []).map((sub) => {
+                    const subKey = `cat-${slug}-${sub.slug}`;
+                    return (
+                      <div key={sub.slug}>
+                        <button
+                          onClick={() => toggleSubcategory(subKey)}
+                          className="w-full flex items-center gap-1.5 py-1.5 text-xs font-medium uppercase tracking-wide text-[var(--text-secondary)] hover:text-primary transition-colors"
+                        >
+                          {expandedSubcategories.includes(subKey) ? (
+                            <ChevronDown size={11} />
+                          ) : (
+                            <ChevronRight size={11} />
+                          )}
+                          {sub.name}
+                        </button>
+                        {expandedSubcategories.includes(subKey) && (
+                          <div className="ml-3 border-l border-[var(--border-color)] pl-3 mb-1">
+                            {sub.posts.map((post) => (
+                              <Link
+                                key={post.slug}
+                                href={`/post/${slug}/${post.slug}`}
+                                onClick={() => setMobileOpen(false)}
+                                className={`block py-1.5 text-xs transition-colors ${
+                                  pathname === `/post/${slug}/${post.slug}`
+                                    ? "text-primary font-medium"
+                                    : "text-[var(--text-secondary)] hover:text-primary"
+                                }`}
+                              >
+                                {post.title}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                  {/* Flat posts within category */}
                   {(categorySubmenuPosts[slug] ?? []).map((post) => (
                     <Link
                       key={post.slug}
