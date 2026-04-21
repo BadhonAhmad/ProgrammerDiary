@@ -827,6 +827,102 @@ const languageFrameworks: LanguageFramework[] = [
       },
     ],
   },
+  {
+    name: "FastAPI",
+    slug: "fastapi",
+    icon: FileCode2,
+    posts: [],
+    subcategories: [
+      {
+        name: "Getting Started",
+        slug: "getting-started",
+        posts: [
+          { title: "What is FastAPI?", slug: "what-is-fastapi" },
+          { title: "Why FastAPI?", slug: "why-fastapi" },
+          {
+            title: "Installation & Setup",
+            slug: "fastapi-installation-setup",
+          },
+          {
+            title: "Directory Structure",
+            slug: "fastapi-directory-structure",
+          },
+        ],
+      },
+      {
+        name: "Core Concepts",
+        slug: "core-concepts",
+        posts: [
+          {
+            title: "Path Parameters",
+            slug: "fastapi-path-parameters",
+          },
+          {
+            title: "Query Parameters",
+            slug: "fastapi-query-parameters",
+          },
+          {
+            title: "Request Body & Pydantic",
+            slug: "fastapi-request-body-pydantic",
+          },
+          {
+            title: "Response Models",
+            slug: "fastapi-response-models",
+          },
+        ],
+      },
+      {
+        name: "Routing & Middleware",
+        slug: "routing-middleware",
+        posts: [
+          { title: "APIRouter", slug: "fastapi-apirouter" },
+          { title: "Middleware", slug: "fastapi-middleware" },
+          {
+            title: "Dependency Injection",
+            slug: "fastapi-dependency-injection",
+          },
+        ],
+      },
+      {
+        name: "Database & Auth",
+        slug: "database-auth",
+        posts: [
+          {
+            title: "Database with SQLAlchemy",
+            slug: "fastapi-database-sqlalchemy",
+          },
+          {
+            title: "Authentication & JWT",
+            slug: "fastapi-authentication-jwt",
+          },
+          { title: "OAuth2", slug: "fastapi-oauth2" },
+        ],
+      },
+      {
+        name: "Error Handling & Testing",
+        slug: "error-handling-testing",
+        posts: [
+          { title: "Error Handling", slug: "fastapi-error-handling" },
+          { title: "Testing with pytest", slug: "fastapi-testing" },
+        ],
+      },
+      {
+        name: "Advanced",
+        slug: "advanced",
+        posts: [
+          {
+            title: "Background Tasks",
+            slug: "fastapi-background-tasks",
+          },
+          { title: "WebSockets", slug: "fastapi-websockets" },
+          {
+            title: "Deployment & Best Practices",
+            slug: "fastapi-deployment",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export default function Sidebar() {
