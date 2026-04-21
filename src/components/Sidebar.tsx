@@ -923,6 +923,124 @@ const languageFrameworks: LanguageFramework[] = [
       },
     ],
   },
+  {
+    name: "Spring Boot",
+    slug: "springboot",
+    icon: FileCode2,
+    posts: [],
+    subcategories: [
+      {
+        name: "Getting Started",
+        slug: "getting-started",
+        posts: [
+          { title: "What is Spring Boot?", slug: "what-is-springboot" },
+          { title: "Why Spring Boot?", slug: "why-springboot" },
+          {
+            title: "Installation & Setup",
+            slug: "springboot-installation-setup",
+          },
+          {
+            title: "Project Structure",
+            slug: "springboot-project-structure",
+          },
+        ],
+      },
+      {
+        name: "Core Concepts",
+        slug: "core-concepts",
+        posts: [
+          {
+            title: "Dependency Injection & IoC",
+            slug: "springboot-dependency-injection-ioc",
+          },
+          {
+            title: "Beans & Configuration",
+            slug: "springboot-beans-configuration",
+          },
+          {
+            title: "Annotations",
+            slug: "springboot-annotations",
+          },
+          {
+            title: "Application Properties",
+            slug: "springboot-application-properties",
+          },
+        ],
+      },
+      {
+        name: "REST API",
+        slug: "rest-api",
+        posts: [
+          {
+            title: "Building REST APIs",
+            slug: "springboot-building-rest-apis",
+          },
+          {
+            title: "Request Body & Validation",
+            slug: "springboot-request-body-validation",
+          },
+          {
+            title: "Exception Handling",
+            slug: "springboot-exception-handling",
+          },
+        ],
+      },
+      {
+        name: "Data Access",
+        slug: "data-access",
+        posts: [
+          {
+            title: "Spring Data JPA",
+            slug: "springboot-spring-data-jpa",
+          },
+          {
+            title: "Database Configuration & Migrations",
+            slug: "springboot-database-migrations",
+          },
+        ],
+      },
+      {
+        name: "Security",
+        slug: "security",
+        posts: [
+          {
+            title: "Spring Security Basics",
+            slug: "springboot-security-basics",
+          },
+          {
+            title: "Authentication & JWT",
+            slug: "springboot-authentication-jwt",
+          },
+          {
+            title: "Authorization & Roles",
+            slug: "springboot-authorization-roles",
+          },
+        ],
+      },
+      {
+        name: "Advanced",
+        slug: "advanced",
+        posts: [
+          {
+            title: "Caching",
+            slug: "springboot-caching",
+          },
+          {
+            title: "Scheduling & Async",
+            slug: "springboot-scheduling-async",
+          },
+          {
+            title: "Testing",
+            slug: "springboot-testing",
+          },
+          {
+            title: "Deployment & Best Practices",
+            slug: "springboot-deployment",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export default function Sidebar() {
